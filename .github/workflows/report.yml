@@ -1,0 +1,37 @@
+name: Send Weekly Report
+on:
+  schedule:
+    # - cron: '30 3 * * 1-5'  # At 03:30 on every day-of-week from Monday through Friday
+  workflow_dispatch:     
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install firebase-admin xlsx nodemailer
+
+      - name: Create Firebase service account file
+        run: 
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > serviceAccountKey.json
+
+      - name: Run report script
+        env:
+          FIREBASE_DB_URL: ${{ secrets.FIREBASE_DB_URL }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          RECIPIENT_USER: ${{ secrets.RECIPIENT_USER }}
+        run: node generateReport.js
+
+      - name: Clean up (optional)
+        run: rm serviceAccountKey.json
+      
+      
