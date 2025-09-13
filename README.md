@@ -2,6 +2,11 @@
 
 **SlotWise** is a web application designed to simplify the process of booking training slots for trainers and trainees. It helps manage training schedules, attendance, and provides an efficient way for admins to oversee bookings and daily reports.
 
+## Demo
+https://github.com/user-attachments/assets/0e1ad132-352f-4c88-a3b6-eb14d10768de
+
+<br>
+
 ## ⚡ Tech Stack
 - **Frontend**: React, Tailwind CSS  
 - **Backend / Database**: Firebase Realtime Database  
@@ -29,8 +34,6 @@
   - Slots can be booked up to **1 week in advance**.
   - New week's slots open every **Saturday**.
 
-<br>
-
 ### ✅ Admin Features
 - Receive a **daily report** email showing:
   - Which slots are booked.
@@ -39,9 +42,3 @@
 
 - **Trainer Management**  
   Admin can edit trainer names.
-
-
-https://github.com/user-attachments/assets/0e1ad132-352f-4c88-a3b6-eb14d10768de
-
-
-  
