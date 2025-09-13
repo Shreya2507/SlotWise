@@ -25,7 +25,7 @@
 
 - **Booking Restrictions**
   - Cannot book more than **3 slots per day**.
-  - Cannot book **3 consecutive slots or more**.
+  - Can only book maximum **2 consecutive slots**.
   - Slots can be booked up to **1 week in advance**.
   - New week's slots open every **Saturday**.
 
